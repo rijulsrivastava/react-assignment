@@ -20,7 +20,9 @@ function ToDoItem(props){
     function handleDelete(){
         props.onDelete(props.task.id)    
     }
-    
+    function handleCheckbox(){
+        props.isDone(props.task.id)
+    }
     return(
         <div className="task-section">
             {console.log(props.task)}
@@ -37,8 +39,9 @@ function ToDoItem(props){
                 </>
                 :
                 <>
-                {props.task.input}
+                <p style={{textDecoration:props.task.isDone?'line-through red':'none'}}>{props.task.input}</p>
                 <div>
+                    <input type='checkbox' value='done' onClick={handleCheckbox}/>
                     <button className='edit-btn' onClick={handleEdit}>Edit</button>
                     <button onClick={handleDelete}>Delete</button>
                 </div>

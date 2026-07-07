@@ -18,6 +18,7 @@ function App() {
     const item = {
       id:counter,
       input:inputString,
+      isdone:false
     }
     // {console.log(inputString)}
     
@@ -40,6 +41,15 @@ function App() {
     setListItem(listItem.filter((ele)=>ele.id != id))
   }
 
+  function handleDone(id){
+    setListItem(listItem.map((ele)=>{
+      if(ele.id == id){
+        return  { ...ele, isDone: !ele.isDone }
+      }
+      return ele
+    }))
+  }
+
   return(
     <>
       <Header/>
@@ -47,7 +57,7 @@ function App() {
         <input type="text" value={inputString} onChange={handleOnChange}/>
         <button onClick={handleOnClick}>Add item</button>
       </div>
-      <ToDoList task ={listItem} onEdit={handleEdit} onDelete={handleDelete}/>
+      <ToDoList task ={listItem} onEdit={handleEdit} onDelete={handleDelete} isDone={handleDone}/>
     </>
   )
 }

@@ -10,7 +10,7 @@ function ToDoList(props){
             <h2>Task at hand</h2>
             <section className="list-section">
                 {props.task.map((task)=>{
-                return <ToDoItem key={task.id} task={task} onEdit={props.onEdit} onDelete={props.onDelete}/>
+                return <ToDoItem key={task.id} task={task} onEdit={props.onEdit} onDelete={props.onDelete} isDone={props.isDone}/>
                 })}
             </section>
         </main>
