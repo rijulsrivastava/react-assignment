@@ -25,6 +25,17 @@ function App() {
     setInputString("")
     setCounter(counter+1)
   }
+
+  function handleEdit(id, modifiedInput) {
+    const updatedList = listItem.map((item) =>{
+      if(item.id == id){
+        return {...item, input: modifiedInput}
+      }
+      return item
+    })
+    setListItem(updatedList);
+  }
+
   return(
     <>
       <Header/>
@@ -32,7 +43,7 @@ function App() {
         <input type="text" value={inputString} onChange={handleOnChange}/>
         <button onClick={handleOnClick}>Add item</button>
       </div>
-      <ToDoList task ={listItem}/>
+      <ToDoList task ={listItem} onEdit={handleEdit}/>
     </>
   )
 }

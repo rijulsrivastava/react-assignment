@@ -2,16 +2,18 @@ import ToDoItem from "./ToDoItem";
 
 function ToDoList(props){
     if(props.task.length==0){
-        return
+        return;
     }
 
     return(
-        <>
-        <h2>To-Do List</h2>
-        {props.task.map((task)=>{
-            return <ToDoItem key={task.id} task={task}/>
-        })}
-        </>
+        <main className="main-section">
+            <h2>Task at hand</h2>
+            <section className="list-section">
+                {props.task.map((task)=>{
+                return <ToDoItem key={task.id} task={task} onEdit={props.onEdit}/>
+                })}
+            </section>
+        </main>
     )
 }
 
