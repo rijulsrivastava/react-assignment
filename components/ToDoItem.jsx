@@ -17,6 +17,9 @@ function ToDoItem(props){
         setModifiedInput(props.task.input)
         setChangeInput('noEdit')
     }
+    function handleDelete(){
+        props.onDelete(props.task.id)    
+    }
     
     return(
         <div className="task-section">
@@ -37,6 +40,7 @@ function ToDoItem(props){
                 {props.task.input}
                 <div>
                     <button className='edit-btn' onClick={handleEdit}>Edit</button>
+                    <button onClick={handleDelete}>Delete</button>
                 </div>
                 </>}
             </div>

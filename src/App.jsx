@@ -36,6 +36,10 @@ function App() {
     setListItem(updatedList);
   }
 
+  function handleDelete(id){
+    setListItem(listItem.filter((ele)=>ele.id != id))
+  }
+
   return(
     <>
       <Header/>
@@ -43,7 +47,7 @@ function App() {
         <input type="text" value={inputString} onChange={handleOnChange}/>
         <button onClick={handleOnClick}>Add item</button>
       </div>
-      <ToDoList task ={listItem} onEdit={handleEdit}/>
+      <ToDoList task ={listItem} onEdit={handleEdit} onDelete={handleDelete}/>
     </>
   )
 }
