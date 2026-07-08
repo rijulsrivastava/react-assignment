@@ -18,7 +18,7 @@ function App() {
     const item = {
       id:counter,
       input:inputString,
-      isdone:false
+      isDone:false
     }
     // {console.log(inputString)}
     
@@ -51,14 +51,16 @@ function App() {
   }
 
   return(
-    <>
+    <div className='root-div'>
+      <div className='bg'>
+      </div>
       <Header/>
       <div className='input-section'>
-        <input type="text" value={inputString} onChange={handleOnChange}/>
+        <input type="text" value={inputString} onChange={handleOnChange} placeholder='Enter Task'/>
         <button onClick={handleOnClick}>Add item</button>
       </div>
       <ToDoList task ={listItem} onEdit={handleEdit} onDelete={handleDelete} isDone={handleDone}/>
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,17 @@
+.header-section{
+    height: 10vh;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+}
+.heading{
+    font-size: 2.5em;
+}
+.heading::first-letter{
+    font-style: italic;
+    font-size: 1.4em;
+    color: brown;
+}

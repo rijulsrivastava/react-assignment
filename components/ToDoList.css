@@ -1,0 +1,20 @@
+.main-section{
+    padding: 20px;
+    padding-top: 0;
+    position:absolute;
+    left: 100px;
+    right: 100px;
+    border-radius: 15px;
+    background-color: transparent;
+    backdrop-filter: blur(1px);
+}
+
+.main-section h2{
+    padding-left: 20px;
+}
+
+.list-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

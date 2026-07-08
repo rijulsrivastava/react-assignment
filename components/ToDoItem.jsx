@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './ToDoList.css'
 
 function ToDoItem(props){
 
@@ -26,24 +27,27 @@ function ToDoItem(props){
     return(
         <div className="task-section">
             {console.log(props.task)}
-            <div className='div1'>{props.task.id}.</div>
+            <div className='div1'><i class="fa-solid fa-angle-right"></i></div>
             <div className='div2'>
                 {(changeInput=='edit') 
                 ?
-                <>
+                <div className='edit-section'>
                 <input type="text" value={modifiedInput} onChange={(e)=>{
                     setModifiedInput(e.target.value)
                 }} />
-                <button onClick={handleSave}>Save</button>
-                <button onClick={handleDoNotSave}>Don't Save</button>
-                </>
+                <div className='change-section'>
+                    <button onClick={handleSave}>Save</button>
+                    <button onClick={handleDoNotSave}>Don't Save</button>
+                </div>
+                </div>
                 :
                 <>
                 <p style={{textDecoration:props.task.isDone?'line-through red':'none'}}>{props.task.input}</p>
-                <div>
-                    <input type='checkbox' value='done' onClick={handleCheckbox}/>
-                    <button className='edit-btn' onClick={handleEdit}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button>
+                <div className='div3'>
+                    {props.task.isDone?<p style={{color:'green', fontWeight:'bold'}}>Completed</p>:null}
+                    <input type='checkbox' checked={props.task.isDone} value='done' onChange={handleCheckbox} className='checkbox' style={{width:'20px', height:'20px'}}/>
+                    <button className='edit-btn' onClick={handleEdit}><i class="fas fa-edit"></i></button>
+                    <button onClick={handleDelete} style={{color:'red'}}><i class="fa-solid fa-trash"></i></button>
                 </div>
                 </>}
             </div>

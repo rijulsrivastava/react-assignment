@@ -3,7 +3,7 @@ import './header.css'
 function Header(){
     return(
         <header className='header-section'>
-            <h1 className='heading'>To Do List</h1>
+            <h1 className='heading'>To Do App</h1>
         </header>
     )
 }

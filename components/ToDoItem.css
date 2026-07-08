@@ -1,0 +1,76 @@
+.task-section{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.6);
+    gap: 10px;
+    background-color: rgba(169, 169, 169, 0.8);
+}
+
+.task-section:nth-child(2n){
+    background-color: #999;
+}
+
+.div1{
+    width: 20px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+.div2{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.change-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    
+}
+
+.change-section button{
+    border-radius: 10px;
+    padding: 5px;
+    background-color: dimgray;
+    color: white;
+}
+
+.change-section button:hover{
+    transform: scale(1.1);
+    background-color:  gray;
+}
+
+.edit-section{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.edit-section input{
+    border-radius: 10px;
+    flex-grow: 1;
+    padding: 5px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.edit-section input::placeholder{
+    color: dimgray;
+}
+
+.div3 *:hover{
+    transform: scale(1.1);
+}

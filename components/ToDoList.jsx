@@ -1,8 +1,9 @@
 import ToDoItem from "./ToDoItem";
+import './ToDoItem.css'
 
 function ToDoList(props){
     if(props.task.length==0){
-        return;
+        return null;
     }
 
     return(
